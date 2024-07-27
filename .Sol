@@ -1,0 +1,185 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Solara Hub",
+   LoadingTitle = "Solara Hub",
+   LoadingSubtitle = "by simon_617",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Solara Hub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "https://discord.gg/fvTeCqxYMp", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Solara Hub",
+      Subtitle = "Solara Hub",
+      Note = "discord.gg/fvTeCqxYMp",
+      FileName = "Solara Hub", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/5u7AfPw4"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("🏠 Home", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+Rayfield:Notify({
+   Title = "Solara Hub",
+   Content = "Made by simon_617",
+   Duration = 5,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Jump Toggle",
+   Callback = function()
+       --Toggles the infinite jump between on or off on every script run
+_G.infinjump = not _G.infinjump
+
+if _G.infinJumpStarted == nil then
+	--Ensures this only runs once to save resources
+	_G.infinJumpStarted = true
+	
+	--Notifies readiness
+	game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
+
+	--The actual infinite jump
+	local plr = game:GetService('Players').LocalPlayer
+	local m = plr:GetMouse()
+	m.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+			humanoid:ChangeState('Jumping')
+			wait()
+			humanoid:ChangeState('Seated')
+			end
+		end
+	end)
+end
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "WalkSpeed Slider",
+   Range = {1, 350},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "JumpPower Slider",
+   Range = {1, 350},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderjp", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+   end,
+})
+
+local ScriptsTab = Window:CreateTab("💻 Scripts", nil) -- Title, Image
+
+local Button1 = ScriptsTab:CreateButton({
+   Name = "Arsenal",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Insertl/QuotasHub/main/BETAv1.3"))()
+   end,
+})
+
+local Button2 = ScriptsTab:CreateButton({
+   Name = "JailBreak",
+   Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/xChaoticVoid/Jailbreak/main/Chaos.lua'), true))()
+   end,
+})
+
+local Button3 = ScriptsTab:CreateButton({
+   Name = "Kat",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scripter1cursed1rade/BelugaWare-1.4/main/belugaware.lua"))()
+   end,
+})
+
+local Button4 = ScriptsTab:CreateButton({
+   Name = "Dahood",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+   end,
+})
+
+local Button5 = ScriptsTab:CreateButton({
+   Name = "Natural disaster",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/Rawnder-NTDR/main/NaturalDisaster'))()
+   end,
+})
+
+local Button6 = ScriptsTab:CreateButton({
+   Name = "infinity yield",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button7 = ScriptsTab:CreateButton({
+   Name = "esp",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button8 = ScriptsTab:CreateButton({
+   Name = "Rivals",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubRivals"))()
+   end,
+})
+
+local Button9 = ScriptsTab:CreateButton({
+   Name = "Zombie attack",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/zombie-attack-by-lqmc/main/by%20%40lqmc%20on%20discord"))();
+   end,
+})
+
+local Button10 = ScriptsTab:CreateButton({
+   Name = "a dusty trip",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
+   end,
+})
+
+local Button11 = ScriptsTab:CreateButton({
+   Name = "MM2",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/kortigadulfo/pepsihub/main/mm2.lua"))()
+   end,
+})
+
+local Button12 = ScriptsTab:CreateButton({
+   Name = "Build a boat",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/max2007killer/auto-build-not-limit/main/autobuild.txt"))()
+   end,
+})
