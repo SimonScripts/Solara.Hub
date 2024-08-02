@@ -173,7 +173,7 @@ local Button10 = ScriptsTab:CreateButton({
 local Button11 = ScriptsTab:CreateButton({
    Name = "MM2",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/kortigadulfo/pepsihub/main/mm2.lua"))()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/Roman34296589/SnapSanix-GUI-MM2/main/SnapSanix%20GUI%20mm2.lua'))()
    end,
 })
 
@@ -181,5 +181,12 @@ local Button12 = ScriptsTab:CreateButton({
    Name = "Build a boat",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/max2007killer/auto-build-not-limit/main/autobuild.txt"))()
+   end,
+})
+
+local Button13 = ScriptsTab:CreateButton({
+   Name = "Blox fruits",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MAMAhub1/Mmahub/main/README.md"))()
    end,
 })
