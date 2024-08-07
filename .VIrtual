@@ -11,18 +11,18 @@ local Window = Rayfield:CreateWindow({
    },
    Discord = {
       Enabled = true,
-      Invite = "https://discord.gg/fvTeCqxYMp", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      Invite = "https://discord.gg/wtmGPc3SfX", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
    KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
       Title = "Solara Hub",
       Subtitle = "Solara Hub",
-      Note = "discord.gg/fvTeCqxYMp",
+      Note = "discord.gg/wtmGPc3SfX",
       FileName = "Solara Hub", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"https://pastebin.com/raw/5u7AfPw4"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"zeko","notyashlol","notyashlol2","imak"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
 
@@ -49,27 +49,27 @@ local Button = MainTab:CreateButton({
    Callback = function()
        --Toggles the infinite jump between on or off on every script run
 _G.infinjump = not _G.infinjump
-
+ 
 if _G.infinJumpStarted == nil then
-	--Ensures this only runs once to save resources
-	_G.infinJumpStarted = true
-	
-	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
-
-	--The actual infinite jump
-	local plr = game:GetService('Players').LocalPlayer
-	local m = plr:GetMouse()
-	m.KeyDown:connect(function(k)
-		if _G.infinjump then
-			if k:byte() == 32 then
-			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
-			humanoid:ChangeState('Jumping')
-			wait()
-			humanoid:ChangeState('Seated')
-			end
-		end
-	end)
+    --Ensures this only runs once to save resources
+    _G.infinJumpStarted = true
+    
+    --Notifies readiness
+    game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
+ 
+    --The actual infinite jump
+    local plr = game:GetService('Players').LocalPlayer
+    local m = plr:GetMouse()
+    m.KeyDown:connect(function(k)
+        if _G.infinjump then
+            if k:byte() == 32 then
+            humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+            humanoid:ChangeState('Jumping')
+            wait()
+            humanoid:ChangeState('Seated')
+            end
+        end
+    end)
 end
    end,
 })
@@ -113,80 +113,129 @@ local Button2 = ScriptsTab:CreateButton({
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/xChaoticVoid/Jailbreak/main/Chaos.lua'), true))()
    end,
 })
-
+ 
 local Button3 = ScriptsTab:CreateButton({
    Name = "Kat",
    Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/scripter1cursed1rade/BelugaWare-1.4/main/belugaware.lua"))()
    end,
 })
-
+ 
 local Button4 = ScriptsTab:CreateButton({
    Name = "Dahood",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
    end,
 })
-
+ 
 local Button5 = ScriptsTab:CreateButton({
    Name = "Natural disaster",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/Rawnder-NTDR/main/NaturalDisaster'))()
    end,
 })
-
+ 
 local Button6 = ScriptsTab:CreateButton({
    Name = "infinity yield",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
    end,
 })
-
+ 
 local Button7 = ScriptsTab:CreateButton({
-   Name = "esp",
+   Name = "Esp",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/SimonScripts/Esp.Solara.hub/main/.Sol'))()
    end,
 })
-
+ 
 local Button8 = ScriptsTab:CreateButton({
    Name = "Rivals",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubRivals"))()
    end,
 })
-
+ 
 local Button9 = ScriptsTab:CreateButton({
    Name = "Zombie attack",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/zombie-attack-by-lqmc/main/by%20%40lqmc%20on%20discord"))();
    end,
 })
-
+ 
 local Button10 = ScriptsTab:CreateButton({
    Name = "a dusty trip",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
    end,
 })
-
+ 
 local Button11 = ScriptsTab:CreateButton({
    Name = "MM2",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/Roman34296589/SnapSanix-GUI-MM2/main/SnapSanix%20GUI%20mm2.lua'))()
    end,
 })
-
+ 
 local Button12 = ScriptsTab:CreateButton({
    Name = "Build a boat",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/max2007killer/auto-build-not-limit/main/autobuild.txt"))()
    end,
 })
-
+ 
 local Button13 = ScriptsTab:CreateButton({
-   Name = "Blox fruits",
+   Name = "chat bypasser",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/MAMAhub1/Mmahub/main/README.md"))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/chat-bypasser-by-me/main/bypasser"))()
+   end,
+})
+ 
+local Button14 = ScriptsTab:CreateButton({
+   Name = "combat warriors",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/master/flare"))()
+   end,
+})
+ 
+local Button15 = ScriptsTab:CreateButton({
+   Name = "Bed Wars",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/CakScripts/GhostWare/main/MainScript"))()
+   end,
+})
+ 
+local Button16 = ScriptsTab:CreateButton({
+   Name = "strongest battlegrounds",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/NBLMSCRIPTS/NBLMSCRIPTHUB/main/SKIBIDI"))()
+   end,
+})
+ 
+local Button17 = ScriptsTab:CreateButton({
+   Name = "counter blox",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/toasty-dev/pissblox/main/solaris_bootstrapper.lua",true))()
+   end,
+})
+ 
+local Button18 = ScriptsTab:CreateButton({
+   Name = "Big paintball",
+   Callback = function()
+       loadstring(game:HttpGet("https://paste.ee/r/06eGU/0"))()
+   end,
+})
+ 
+local Button19 = ScriptsTab:CreateButton({
+   Name = "fishing simulator",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/fishing-simulator-by-me/main/by%20%40lqmc"))()
+   end,
+})
+ 
+local Button20 = ScriptsTab:CreateButton({
+   Name = "slap battles",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Aquoupi/DestroyerX/main/DestroyerX"))()
    end,
 })
